@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Experiments | LinguaLab</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#002045",
+                        "secondary-container": "#d5e0f7",
+                        "on-surface": "#181c1e",
+                        "on-surface-variant": "#43474e",
+                        "surface-container": "#ebeef0"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Public Sans"],
+                        "body-md": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface bg-[#f7fafc]">
+    <nav class="bg-white border-b border-slate-200">
+        <div class="flex justify-between items-center w-full px-8 max-w-[1280px] mx-auto h-16">
+            <div class="text-xl font-bold text-slate-900 font-headline-md">LinguaLab</div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a class="text-slate-600 hover:text-blue-800" href="index.html">Home</a>
+                <a class="text-blue-900 border-b-2 border-blue-900 pb-1" href="experiments.html">Experiments</a>
+                <a class="text-slate-600 hover:text-blue-800" href="settings.html">Settings</a>
+                <a class="text-slate-600 hover:text-blue-800" href="transparency.html">Transparency</a>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">account_circle</span>
+        </div>
+    </nav>
+
+    <main class="max-w-[1280px] mx-auto px-8 py-12">
+        <h1 class="text-4xl font-bold text-primary mb-8">Active Experiments</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white border border-slate-200 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">ACTIVE</span>
+                    <span class="material-symbols-outlined text-primary">psychology</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Affective Lexical Learning</h3>
+                <p class="text-on-surface-variant mb-6">Investigating how emotional valance influences the acquisition of novel vocabulary in second-language learners.</p>
+                <button class="bg-primary text-white px-6 py-2 rounded font-medium hover:opacity-90">Participate</button>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">ACTIVE</span>
+                    <span class="material-symbols-outlined text-primary">neurology</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Bilingual Processing Load</h3>
+                <p class="text-on-surface-variant mb-6">A physiological study measuring skin conductance and response latency during code-switching tasks.</p>
+                <button class="bg-primary text-white px-6 py-2 rounded font-medium hover:opacity-90">Participate</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
