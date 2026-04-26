@@ -160,9 +160,16 @@
 </div>
 </div>
 <div class="md:col-span-5 relative">
-<div class="aspect-[2/1] bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm relative z-10">
-<img alt="Research Environment" class="w-full h-full object-cover opacity-90" data-alt="close-up of a high-tech clean laboratory setting with blurred digital interfaces and scientific equipment in soft blue and white lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnlxc1BOT97MQ_re3HxRmu9uyOR0TtC-yMnLy8tsWD0JR-6IZhbVI-UMpH9k3-OcaQRyX7n0SuMfYZ_psaCv95Fs4ntVe7LmKAKVCBvxQaRW4ijtB4faXA-iNp9C_5rAUmUDZPb0L_TXZSmfhUK5_cUauv3gobjWBgKG6V-wjgi7E8_cm_G9v4jWM5jLAvjCMfKT3c8wzZxyf_x2jKPQRADwGx9GJeO9iYHF4-vxqxMJ6rhRBUmKePpt-uJh1oqv13iQ51Le1AG0U"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+    <div class="aspect-square bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm relative z-10">
+        <img id="hero-slideshow" 
+             src="images/site/004_o_m_h_a.jpg" 
+             alt="Research Environment" 
+             class="w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100" />
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+    </div>
+    <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-container rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary-fixed-dim rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 </div>
 <!-- Abstract decorative element -->
 <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-container rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
@@ -220,4 +227,32 @@
 </div>
 </div>
 </footer>
+<script>
+    const images = [
+        "images/site/004_o_m_h_a.jpg",
+        "images/site/004_o_m_d_b.jpg",
+        "images/site/140_y_f_d_b.jpg",
+        "images/site/140_y_f_s_a.jpg"
+    ];
+
+    let currentIndex = 0;
+    const slideshowElement = document.getElementById('hero-slideshow');
+
+    function changeImage() {
+        // 1. Start fading out
+        slideshowElement.classList.add('opacity-0');
+
+        setTimeout(() => {
+            // 2. Change the source after it's faded
+            currentIndex = (currentIndex + 1) % images.length;
+            slideshowElement.src = images[currentIndex];
+
+            // 3. Fade back in
+            slideshowElement.classList.remove('opacity-0');
+        }, 700); // This matches the Tailwind 'duration-700' class
+    }
+
+    // Set the interval to 3000ms (3 seconds)
+    setInterval(changeImage, 3000);
+</script>
 </body></html>
